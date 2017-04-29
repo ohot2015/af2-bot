@@ -16,8 +16,11 @@ $pcolor = 0xFFFF1E ; зеленый
 ;$x1 = 2405
 ;$y1 = 285
 ;balans poplovok
-$x1 = 2412
-$y1 = 280
+;$x1 = 2412
+;$y1 = 280
+
+$x1 = 2403
+$y1 = 286
 ; panel крайняя правая точка шкалы удочки
 $px1 = 2690
 $py1 = 259
@@ -27,7 +30,7 @@ Global $downConst = 50
 Global $slpConst =  100
 Global $downCof = 0.5
 Global $slpCof = 0.5
-
+$slllep = 8000
 mylog("Start bot!")
 Sleep(3000)
 while(1)
@@ -39,7 +42,7 @@ while(1)
 		; radiation()
 		; myHp()
 		 ;najivkaGoroh()
-		 najivkaKujnechik()
+		;najivkaKujnechik()
 		 ;перезакидывание
 		 ;MouseClick('left',2558,419,1,10)
 		 Send('t')
@@ -48,7 +51,7 @@ while(1)
 		 PixelSearch($x1,$y1,$x1 + 10,$y1 + 10,$pcolor, 100)
 		 if (@error) Then
 			SetError(0);
-			Sleep(5000)
+			Sleep($slllep)
 		 EndIf
 		 mylog('заброшено')
 		 ;Opt('SendKeyDownDelay',200);
@@ -116,11 +119,10 @@ Func Fric($uy1,$key,$opt,$slp)
    if ($stmp < 0) Then
 	  $stmp = 0
    EndIf
-   Opt('SendKeyDownDelay',$tmp)
-   if ($opt > 2000) Then
-	  $opt = 2000
+   if ($tmp > 2000) Then
+	  $tmp = 2000
    EndIf
-
+   Opt('SendKeyDownDelay',$tmp)
    Send($key)
    $uda = PixelSearch($ux1,$uy1,$ux2,$uy2,0x2B2520)
    if not(@error) Then
