@@ -30,7 +30,7 @@ Global $downConst = 50
 Global $slpConst =  100
 Global $downCof = 0.5
 Global $slpCof = 0.5
-$slllep = 8000
+$slllep = 12000
 mylog("Start bot!")
 Sleep(3000)
 while(1)
