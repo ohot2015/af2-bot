@@ -1,2 +1,2 @@
 # af2-bot
-fidhing bot for atom fishing 2
+fishing bot for atom fishing 2
